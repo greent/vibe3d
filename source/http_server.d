@@ -512,6 +512,10 @@ class HttpServer {
             response.statusCode = 200;
             response.body = "{\"name\": \"Vibe3D\", \"description\": \"A 3D polygon mesh editor written in D\", \"version\": \"1.0\"}";
             response.headers["Content-Type"] = "application/json";
+        } else if (request.path == "/api/ping" && request.method == "GET") {
+            response.statusCode = 200;
+            response.body = `{"status": "ok"}`;
+            response.headers["Content-Type"] = "application/json";
         } else if (request.path == "/api/model") {
             if (useDetailedProvider && detailedModelDataProvider !is null) {
                 try {
