@@ -216,10 +216,6 @@ jobs:
               cd "$NFD_DIR" && git submodule update --init --recursive
           fi
 
-      - name: Bundle vibe3d-${{ matrix.name }}-render.zip
-        shell: ${{ matrix.shell }}
-        run: ${{ matrix.bundle }}
-
       - name: Upload zip
         uses: actions/upload-artifact@v4
         with:
